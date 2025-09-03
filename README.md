@@ -11,10 +11,10 @@ Each exercise is designed to be beginner-friendly while still offering opportuni
 Exercises are organized by programming language, so you can easily explore and practice at your own pace.
 
 ### Python 🐍
-1. **Temperature Converter** – A simple program that allows users to convert temperatures from Celsius to Fahrenheit and vice versa.
+1. **Temperature Converter** – A simple program in Python that allows users to convert temperatures from Celsius to Fahrenheit and vice versa.
 
 ### JavaScript ⚡
-- Coming soon 🚧
+1. **Temperature Converter** – A simple program in JavaScript that allows users to convert temperatures from Celsius to Fahrenheit and vice versa (Recommended to run the code with Deno).
 
 ### Go 🦫
 - Coming soon 🚧
