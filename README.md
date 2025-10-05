@@ -14,13 +14,13 @@ Exercises are organized by programming language, so you can easily explore and p
 1. **Data Structures:**
 2. **DOM (Document Object Model):**
 3. **Exercises:**
-    -**Temperature Converter** – A simple program in JavaScript that allows users to convert temperatures from Celsius to Fahrenheit and vice versa (Recommended to run the code with Deno).
+    - **Temperature Converter** – A simple program in JavaScript that allows users to convert temperatures from Celsius to Fahrenheit and vice versa (Recommended to run the code with Deno).
 4. **OOP**:
     
 ### Python 🐍
 1. **Data Structures:**
 2. **Exercises:**
-    -**Temperature Converter** – A simple program in Python that allows users to convert temperatures from Celsius to Fahrenheit and vice versa.
+    - **Temperature Converter** – A simple program in Python that allows users to convert temperatures from Celsius to Fahrenheit and vice versa.
 3. **OOP**:
 
 ### SQL 🛢
