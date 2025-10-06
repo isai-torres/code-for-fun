@@ -8,7 +8,7 @@ I. MySQL Terminal Commands:
 
   3. CREATE USER 'username'@'localhost' IDENTIFIED BY 'your_password'; --> This command creates a new user. 'localhost' is the address of your server — in this case, it refers to your local machine, but it can also be replaced with a remote address.
 
-	4. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
+  4. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
 
   5. GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION; --> The "WITH GRANT OPTION" clause allows that user to grant the same privileges to other users.
 
