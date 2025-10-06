@@ -8,9 +8,11 @@ I. MySQL Terminal Commands:
 
   3. CREATE USER 'username'@'localhost' IDENTIFIED BY 'your_password'; --> This command creates a new user. 'localhost' is the address of your server — in this case, it refers to your local machine, but it can also be replaced with a remote address.
 
-  4. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
+  4. DROP USER 'username'@'localhost'; --> Delete a MySQL user.
 
-  5. GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION; --> The "WITH GRANT OPTION" clause allows that user to grant the same privileges to other users.
+  5. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
+
+  6. GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION; --> The "WITH GRANT OPTION" clause allows that user to grant the same privileges to other users.
 
   You can also specify which privileges you want to grant. For example: 
   GRANT SELECT, INSERT ON database_name.* TO 'username'@'localhost';
@@ -27,21 +29,21 @@ I. MySQL Terminal Commands:
   | `INDEX`        | Create or remove indexes                       |
   | `GRANT OPTION` | Allow user to grant their privileges to others |
 
-  6. SHOW DATABASES; --> Show all databases.
+  7. SHOW DATABASES; --> Show all databases.
 
-  7. CREATE DATABASE database_name; --> This command creates a new database.
+  8. CREATE DATABASE database_name; --> This command creates a new database.
 
-  8. USE database_name; --> This command selects a database to use.
+  9. USE database_name; --> This command selects a database to use.
 
-  9. DROP DATABASE database_name; --> Delete a database.
+  10. DROP DATABASE database_name; --> Delete a database.
 
-  10. SHOW TABLES; --> Shows all tables.
+  11. SHOW TABLES; --> Shows all tables.
 
-  11. DROP TABLE table_name; --> Delete a table.
+  12. DROP TABLE table_name; --> Delete a table.
 
-  12. DESCRIBE table_name; --> Describe a table (see columns). 
+  13. DESCRIBE table_name; --> Describe a table (see columns). 
 
-  13. Exit; --> Exits MySQL and returns to the system terminal.
+  14. Exit; --> Exits MySQL and returns to the system terminal.
 
 II. Check MySQL status and more:
 
