@@ -1,0 +1,58 @@
+Important: Some commands are specific to Fedora Linux, but most should work on other operating systems too.
+
+I. MySQL Terminal Commands:
+
+  1. sudo mysql --> runs MySQL as a root user.
+
+  2. mysql -u user -p --> runs MySQL with a specific user (-u) and password (-p).
+
+  3. CREATE USER 'username'@'localhost' IDENTIFIED BY 'your_password'; --> This command creates a new user. 'localhost' is the address of your server — in this case, it refers to your local machine, but it can also be replaced with a remote address.
+
+	4. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
+
+  5. GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION; --> The "WITH GRANT OPTION" clause allows that user to grant the same privileges to other users.
+
+  You can also specify which privileges you want to grant. For example: 
+  GRANT SELECT, INSERT ON database_name.* TO 'username'@'localhost';
+
+    | Privilege      | Description                                    |
+  | -------------- | ---------------------------------------------- |
+  | `SELECT`       | Read data from tables                          |
+  | `INSERT`       | Add new rows                                   |
+  | `UPDATE`       | Modify existing data                           |
+  | `DELETE`       | Remove rows                                    |
+  | `CREATE`       | Create new tables or databases                 |
+  | `DROP`         | Delete tables or databases                     |
+  | `ALTER`        | Modify table structure                         |
+  | `INDEX`        | Create or remove indexes                       |
+  | `GRANT OPTION` | Allow user to grant their privileges to others |
+
+  6. SHOW DATABASES; --> Show all databases.
+
+  7. CREATE DATABASE database_name; --> This command creates a new database.
+
+  8. USE database_name; --> This command selects a database to use.
+
+  9. DROP DATABASE database_name; --> Delete a database.
+
+  10. SHOW TABLES; --> Shows all tables.
+
+  11. DROP TABLE table_name; --> Delete a table.
+
+  12. DESCRIBE table_name; --> Describe a table (see columns). 
+
+  13. Exit; --> Exits MySQL and returns to the system terminal.
+
+II. Check MySQL status and more:
+
+  1. sudo systemctl status mysql --> This checks if MySQl server is running or not.
+
+  2. sudo systemctl start mysql --> If not running, start it.
+
+  3. sudo systemctl stop mysql --> Stops MySQL.
+
+  4. sudo systemctl enable mysql --> Enable MySQL to start at boot.
+
+  5. sudo systemctl disable mysql --> Disable MySQL from starting at boot.
+
+  6. sudo systemctl restart mysql --> Restart MySQL.
