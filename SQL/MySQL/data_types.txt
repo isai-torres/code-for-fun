@@ -4,40 +4,40 @@ I. Most Common SQL Data Types:
 
     | **Category**   | **Data Type**                   | **Description**                        | **Example**           |
   | -------------- | ------------------------------- | -------------------------------------- | --------------------- |
-  |   **Numeric**  | `INT`                           | Whole number (±2 billion range)        | `42`                  |
-  |                | `BIGINT`                        | Very large integer                     | `9000000000000000000` |
-  |                | `SMALLINT`                      | Small integer                          | `120`                 |
-  |                | `DECIMAL(p,s)` / `NUMERIC(p,s)` | Exact decimal (for money)              | `12.50`               |
-  |                | `FLOAT`                         | Approximate decimal                    | `3.14`                |
-  |                | `DOUBLE`                        | Higher-precision floating-point number | `123.456789`          |
-  |                | `BOOLEAN` / `BOOL`              | True or false (1 or 0)                 | `TRUE`                |
+  |   **Numeric**  |  INT                            | Whole number (±2 billion range)        |  42                   |
+  |                |  BIGINT                         | Very large integer                     |  9000000000000000000  |
+  |                |  SMALLINT                       | Small integer                          |  120                  |
+  |                |  DECIMAL(p,s)  /  NUMERIC(p,s)  | Exact decimal (for money)              |  12.50                |
+  |                |  FLOAT                          | Approximate decimal                    |  3.14                 |
+  |                |  DOUBLE                         | Higher-precision floating-point number |  123.456789           |
+  |                |  BOOLEAN  /  BOOL               | True or false (1 or 0)                 |  TRUE                 |
 
 
 2. Text / String:
 
   | **Category**         | **Data Type**       | **Description**                      | **Example**        |
   | -------------------- | ------------------- | ------------------------------------ | ------------------ |
-  |  **Text / String**   | `CHAR(n)`           | Fixed-length string                  | `'USA'`            |
-  |                      | `VARCHAR(n)`        | Variable-length string               | `'John Doe'`       |
-  |                      | `TEXT`              | Large text (up to 65k chars)         | `'Lorem ipsum...'` |
-  |                      | `MEDIUMTEXT`        | Medium-length text (up to 16M chars) | long article       |
-  |                      | `LONGTEXT`          | Very large text (up to 4GB)          | book or logs       |
+  |  **Text / String**   |  CHAR(n)            | Fixed-length string                  | 'USA'              |
+  |                      |  VARCHAR(n)         | Variable-length string               | 'John Doe'         |
+  |                      |  TEXT               | Large text (up to 65k chars)         | 'Lorem ipsum...'   |
+  |                      |  MEDIUMTEXT         | Medium-length text (up to 16M chars) | long article       |
+  |                      |  LONGTEXT           | Very large text (up to 4GB)          | book or logs       |
 
 3. Date and Time:
 
     | **Category**       | **Data Type** | **Description**                 | **Example**             |
   | ------------------ | ------------- | ------------------------------- | ----------------------- |
-  |  **Date & Time**   | `DATE`        | Date only                       | `'2025-10-06'`          |
-  |                    | `TIME`        | Time only                       | `'14:30:00'`            |
-  |                    | `DATETIME`    | Date and time                   | `'2025-10-06 14:30:00'` |
-  |                    | `TIMESTAMP`   | Date/time with timezone updates | `'2025-10-06 14:30:00'` |
-  |                    | `YEAR`        | Year (4 digits)                 | `2025`                  |
+  |  **Date & Time**   |  DATE         | Date only                       |  '2025-10-06'           |
+  |                    |  TIME         | Time only                       |  '14:30:00'             |
+  |                    |  DATETIME     | Date and time                   |  '2025-10-06 14:30:00'  |
+  |                    |  TIMESTAMP    | Date/time with timezone updates |  '2025-10-06 14:30:00'  |
+  |                    |  YEAR         | Year (4 digits)                 |   2025                   |
 
 4. Binary / Other:
 
     | **Category**          | **Data Type** | **Description**        | **Example**                   |
   | --------------------- | ------------- | ---------------------- | ----------------------------- |
-  |  **Binary / Other**   | `BLOB`        | Binary data (small)    | *(image/file)*                |
-  |                       | `MEDIUMBLOB`  | Medium binary data     | *(image)*                     |
-  |                       | `LONGBLOB`    | Very large binary data | *(video)*                     |
-  |                       | `JSON`        | JSON-formatted data    | `'{"name":"Alice","age":25}'` |
+  |  **Binary / Other**   |  BLOB         | Binary data (small)    | *(image/file)*                |
+  |                       |  MEDIUMBLOB   | Medium binary data     | *(image)*                     |
+  |                       |  LONGBLOB     | Very large binary data | *(video)*                     |
+  |                       |  JSON         | JSON-formatted data    | '{"name":"Alice","age":25}'   |
