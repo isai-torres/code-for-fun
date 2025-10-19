@@ -3,9 +3,11 @@ This repository is a collection of simple and fun coding exercises created to he
 
 - ✨ Practice different programming languages
 - 🧠 Strengthen problem-solving and logical thinking
+- 🌐 Explore JavaScript and DOM manipulation
+- 🏗️ Learn key computer science concepts like data structures, OOP, and SQL
 - 🚀 Build a solid foundation for more advanced projects
 
-Each exercise is designed to be beginner-friendly while still offering opportunities to experiment, learn, and improve. Whether you're just starting out or revisiting the basics, this repo is a place to grow your coding skills while having fun.
+Each exercise is beginner-friendly yet offers room to experiment, learn, and grow. Whether you're just starting out or deepening your understanding of core concepts, this repo is a space to improve your coding skills while having fun.
 
 ## 📂 Structure
 Exercises are organized by programming language, so you can easily explore and practice at your own pace.
