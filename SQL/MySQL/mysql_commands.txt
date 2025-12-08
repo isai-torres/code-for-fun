@@ -10,24 +10,24 @@ I. MySQL Terminal Commands:
 
   4. DROP USER 'username'@'localhost'; --> Delete a MySQL user.
 
-  5. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges).
+  5. GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost'; --> This command grants all privileges on a specific database to a user. You can replace database_name.* with *.* to grant privileges on all databases (global privileges). You can also specify in which table for example: GRANT ALL PRIVILEGES ON database_name.table_name TO 'user_name'@'localhost'; (.* means to all tables).
 
   6. GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION; --> The "WITH GRANT OPTION" clause allows that user to grant the same privileges to other users.
 
   You can also specify which privileges you want to grant. For example: 
   GRANT SELECT, INSERT ON database_name.* TO 'username'@'localhost';
 
-    | Privilege      | Description                                    |
+  | Privilege      | Description                                    |
   | -------------- | ---------------------------------------------- |
-  | `SELECT`       | Read data from tables                          |
-  | `INSERT`       | Add new rows                                   |
-  | `UPDATE`       | Modify existing data                           |
-  | `DELETE`       | Remove rows                                    |
-  | `CREATE`       | Create new tables or databases                 |
-  | `DROP`         | Delete tables or databases                     |
-  | `ALTER`        | Modify table structure                         |
-  | `INDEX`        | Create or remove indexes                       |
-  | `GRANT OPTION` | Allow user to grant their privileges to others |
+  |  SELECT        | Read data from tables                          |
+  |  INSERT        | Add new rows                                   |
+  |  UPDATE        | Modify existing data                           |
+  |  DELETE        | Remove rows                                    |
+  |  CREATE        | Create new tables or databases                 |
+  |  DROP          | Delete tables or databases                     |
+  |  ALTER         | Modify table structure                         |
+  |  INDEX         | Create or remove indexes                       |
+  |  GRANT OPTION  | Allow user to grant their privileges to others |
 
   7. SHOW DATABASES; --> Show all databases.
 
@@ -43,18 +43,20 @@ I. MySQL Terminal Commands:
 
   13. DESCRIBE table_name; --> Describe a table (see columns). 
 
-  14. Exit; --> Exits MySQL and returns to the system terminal.
+  14. SELECT user, host FROM mysql.user; --> Shows all MySQL users and the host from which each user is allowed to connect.
+
+  15. Exit; --> Exits MySQL and returns to the system terminal.
 
 II. Check MySQL status and more:
 
-  1. sudo systemctl status mysql --> This checks if MySQl server is running or not.
+  1. sudo systemctl status mysqld --> This checks if MySQl server is running or not.
 
-  2. sudo systemctl start mysql --> If not running, start it.
+  2. sudo systemctl start mysqld --> If not running, start it.
 
-  3. sudo systemctl stop mysql --> Stops MySQL.
+  3. sudo systemctl stop mysqld --> Stops MySQL.
 
-  4. sudo systemctl enable mysql --> Enable MySQL to start at boot.
+  4. sudo systemctl enable mysqld --> Enable MySQL to start at boot.
 
-  5. sudo systemctl disable mysql --> Disable MySQL from starting at boot.
+  5. sudo systemctl disable mysqld --> Disable MySQL from starting at boot.
 
-  6. sudo systemctl restart mysql --> Restart MySQL.
+  6. sudo systemctl restart mysqld --> Restart MySQL.
