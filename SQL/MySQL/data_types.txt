@@ -2,9 +2,9 @@ I. Most Common SQL Data Types:
 
 1. Numeric:
 
-    | **Category**   | **Data Type**                   | **Description**                        | **Example**           |
+  |   Category     |   Data Type                     |   Description                          |   Example             |
   | -------------- | ------------------------------- | -------------------------------------- | --------------------- |
-  |   **Numeric**  |  INT                            | Whole number (±2 billion range)        |  42                   |
+  |     Numeric    |  INT                            | Whole number (±2 billion range)        |  42                   |
   |                |  BIGINT                         | Very large integer                     |  9000000000000000000  |
   |                |  SMALLINT                       | Small integer                          |  120                  |
   |                |  DECIMAL(p,s)  /  NUMERIC(p,s)  | Exact decimal (for money)              |  12.50                |
@@ -15,9 +15,9 @@ I. Most Common SQL Data Types:
 
 2. Text / String:
 
-  | **Category**         | **Data Type**       | **Description**                      | **Example**        |
+  |   Category           |   Data Type         |   Description                        |   Example          |
   | -------------------- | ------------------- | ------------------------------------ | ------------------ |
-  |  **Text / String**   |  CHAR(n)            | Fixed-length string                  | 'USA'              |
+  |    Text / String     |  CHAR(n)            | Fixed-length string                  | 'USA'              |
   |                      |  VARCHAR(n)         | Variable-length string               | 'John Doe'         |
   |                      |  TEXT               | Large text (up to 65k chars)         | 'Lorem ipsum...'   |
   |                      |  MEDIUMTEXT         | Medium-length text (up to 16M chars) | long article       |
@@ -25,9 +25,9 @@ I. Most Common SQL Data Types:
 
 3. Date and Time:
 
-    | **Category**       | **Data Type** | **Description**                 | **Example**             |
+  |   Category         |   Data Type   |   Description                   |   Example               |
   | ------------------ | ------------- | ------------------------------- | ----------------------- |
-  |  **Date & Time**   |  DATE         | Date only                       |  '2025-10-06'           |
+  |    Date & Time     |  DATE         | Date only                       |  '2025-10-06'           |
   |                    |  TIME         | Time only                       |  '14:30:00'             |
   |                    |  DATETIME     | Date and time                   |  '2025-10-06 14:30:00'  |
   |                    |  TIMESTAMP    | Date/time with timezone updates |  '2025-10-06 14:30:00'  |
@@ -35,9 +35,9 @@ I. Most Common SQL Data Types:
 
 4. Binary / Other:
 
-    | **Category**          | **Data Type** | **Description**        | **Example**                   |
+  |   Category            |   Data Type   |   Description          |   Example                     |
   | --------------------- | ------------- | ---------------------- | ----------------------------- |
-  |  **Binary / Other**   |  BLOB         | Binary data (small)    | *(image/file)*                |
-  |                       |  MEDIUMBLOB   | Medium binary data     | *(image)*                     |
-  |                       |  LONGBLOB     | Very large binary data | *(video)*                     |
+  |    Binary / Other     |  BLOB         | Binary data (small)    |  (image/file)                 |
+  |                       |  MEDIUMBLOB   | Medium binary data     |  (image)                      |
+  |                       |  LONGBLOB     | Very large binary data |  (video)                      |
   |                       |  JSON         | JSON-formatted data    | '{"name":"Alice","age":25}'   |
