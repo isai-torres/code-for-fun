@@ -1,12 +1,12 @@
 I. How to create a table:
 
-CREATE TABLE table_name (
-	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(50) NOT NULL,
-	lastname VARCHAR(50),
-	age INT,
-	email VARCHAR(100) 
-);
+	CREATE TABLE table_name (
+		user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(50) NOT NULL,
+		lastname VARCHAR(50),
+		age INT,
+		email VARCHAR(100) 
+	);
 
 II. Insert Data:
 
