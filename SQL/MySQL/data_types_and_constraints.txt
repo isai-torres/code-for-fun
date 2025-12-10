@@ -1,0 +1,77 @@
+I. Most Common SQL Data Types:
+
+1. Numeric:
+
+  |   Category     |   Data Type                     |   Description                          |   Example             |
+  | -------------- | ------------------------------- | -------------------------------------- | --------------------- |
+  |     Numeric    |  INT                            | Whole number (±2 billion range)        |  42                   |
+  |                |  BIGINT                         | Very large integer                     |  9000000000000000000  |
+  |                |  SMALLINT                       | Small integer                          |  120                  |
+  |                |  DECIMAL(p,s)  /  NUMERIC(p,s)  | Exact decimal (for money)              |  12.50                |
+  |                |  FLOAT                          | Approximate decimal                    |  3.14                 |
+  |                |  DOUBLE                         | Higher-precision floating-point number |  123.456789           |
+  |                |  BOOLEAN  /  BOOL               | True or false (1 or 0)                 |  TRUE                 |
+
+
+2. Text / String:
+
+  |   Category           |   Data Type         |   Description                        |   Example          |
+  | -------------------- | ------------------- | ------------------------------------ | ------------------ |
+  |    Text / String     |  CHAR(n)            | Fixed-length string                  | 'USA'              |
+  |                      |  VARCHAR(n)         | Variable-length string               | 'John Doe'         |
+  |                      |  TEXT               | Large text (up to 65k chars)         | 'Lorem ipsum...'   |
+  |                      |  MEDIUMTEXT         | Medium-length text (up to 16M chars) | long article       |
+  |                      |  LONGTEXT           | Very large text (up to 4GB)          | book or logs       |
+
+3. Date and Time:
+
+  |   Category         |   Data Type   |   Description                   |   Example               |
+  | ------------------ | ------------- | ------------------------------- | ----------------------- |
+  |    Date & Time     |  DATE         | Date only                       |  '2025-10-06'           |
+  |                    |  TIME         | Time only                       |  '14:30:00'             |
+  |                    |  DATETIME     | Date and time                   |  '2025-10-06 14:30:00'  |
+  |                    |  TIMESTAMP    | Date/time with timezone updates |  '2025-10-06 14:30:00'  |
+  |                    |  YEAR         | Year (4 digits)                 |   2025                   |
+
+4. Binary / Other:
+
+  |   Category            |   Data Type   |   Description          |   Example                     |
+  | --------------------- | ------------- | ---------------------- | ----------------------------- |
+  |    Binary / Other     |  BLOB         | Binary data (small)    |  (image/file)                 |
+  |                       |  MEDIUMBLOB   | Medium binary data     |  (image)                      |
+  |                       |  LONGBLOB     | Very large binary data |  (video)                      |
+  |                       |  JSON         | JSON-formatted data    | '{"name":"Alice","age":25}'   |
+
+II. MySQL Constraints Table
+
+|   Constraint                       |   Description (What it does)                                                                                               |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+|   PRIMARY KEY                      | Uniquely identifies each row in the table. Cannot be NULL. Only one per table.                                             |
+|                                    |                                                                                                                            |
+|   AUTO_INCREMENT                   | Automatically generates sequential numbers for a column (usually used with PRIMARY KEY). Only for integer types.           |
+|                                    |                                                                                                                            |
+|   NOT NULL                         | Ensures the column cannot store NULL values. Requires a value for every row.                                               |
+|                                    |                                                                                                                            |
+|   NULL                             | Allows the column to store NULL values (missing/unknown data). This is the default.                                        |
+|                                    |                                                                                                                            |
+|   UNIQUE                           | Ensures all values in the column are different (prevents duplicates). You can have multiple UNIQUE constraints in a table. |
+|                                    |                                                                                                                            |
+|   DEFAULT                          | Sets a default value for the column when the user does not insert one.                                                     |
+|                                    |                                                                                                                            |
+|   CHECK                            | Validates a condition that data must satisfy (Example: age must be >= 0).                                                  |
+|                                    |                                                                                                                            |
+|   FOREIGN KEY                      | Creates a relationship between tables. Ensures values must exist in the referenced column of another table.                |
+|                                    |                                                                                                                            |
+|   ON DELETE CASCADE                | If the referenced row is deleted, the related rows in this table are also deleted.                                         |
+|                                    |                                                                                                                            |
+|   ON UPDATE CASCADE                | If the referenced row’s value is updated, the related rows update automatically.                                           |
+|                                    |                                                                                                                            |
+|   ON DELETE SET NULL               | If the referenced row is deleted, the value in this table is set to NULL.                                                  |
+|                                    |                                                                                                                            |
+|   ON DELETE RESTRICT               | Prevents deleting a row if it is referenced in another table.                                                              |
+|                                    |                                                                                                                            |
+|   ON UPDATE RESTRICT               | Prevents updating a referenced row if it affects related rows.                                                             |
+|                                    |                                                                                                                            |
+|   INDEX                            | Speeds up queries on a column. Not a constraint, but often used during table creation.                                     |
+|                                    |                                                                                                                            |
+|   PRIMARY KEY (multiple columns)   | Composite key that uniquely identifies rows using more than one column.                                                    |
