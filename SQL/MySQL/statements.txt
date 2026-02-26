@@ -1,0 +1,142 @@
+I. How to create a table:
+
+	CREATE TABLE table_name (
+		user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(50) NOT NULL,
+		lastname VARCHAR(50),
+		age INT,
+		email VARCHAR(100) 
+	);
+
+II. Insert Data:
+
+	1. Insert data for one row --> INSERT INTO table_name (user_id, name, lastname, age, email)
+	   VALUES (1, 'Jose', 'Lopez', 35, 'jose@gmail.com');
+
+	2. Insert data for multiple rows --> INSERT INTO table_name (user_id, name, lastname, age, email)
+	   VALUES (2, 'Maria', 'Gonzales', 23, 'maria@gmail.com')
+	          (3, 'Carlos', 'Colon', 21, 'carlos@gmail.com');
+
+	3. You can also specify which database and table to use --> INSERT INTO database_name.table_name (user_id, name, lastname, age, email)
+																VALUES (1, 'Jose', 'Lopez', 35, 'jose@gmail.com');
+
+III. Select Query:
+
+	1. SELECT * FROM users; --> Retrieves all columns and all rows from the table users.
+
+	2. SELECT name, age FROM users; --> Retrieves only the name and age columns from the table users.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	3. SELECT * FROM users WHERE age > 25; --> Retrieves all columns and rows from the table users where the value in the age column is greater than 25. You can also use the following:
+
+	4. SELECT * FROM users WHERE name IN('Isai'); --> Retrieves all rows from the table users where the value in the name column matches 'Isai'.
+
+	5. SELECT * FROM users WHERE age BETWEEN 25 AND 30; --> Shows all columns for the rows where the user's age is between 25 and 30, inclusive.
+
+|   Type           |   Operator    |   Meaning / Use                      |   Example                                           |   Explanation                                                     |
+| ---------------- | ------------- | ------------------------------------ | --------------------------------------------------- | ----------------------------------------------------------------- |
+|   Comparison     |  =            | Equal to                             |  age = 25                                           | Returns rows where  age  is exactly 25.                           |
+|                  | !=  or  <>    | Not equal to                         |  age != 25                                          | Returns rows where  age  is not 25.                               |
+|                  |  >            | Greater than                         |  age > 25                                           | Returns rows where  age  is more than 25.                         |
+|                  |  <            | Less than                            |  age < 25                                           | Returns rows where  age  is less than 25.                         |
+|                  |  >=           | Greater than or equal to             |  age >= 25                                          | Returns rows where  age  is 25 or higher.                         |
+|                  |  <=           | Less than or equal to                |  age <= 25                                          | Returns rows where  age  is 25 or lower.                          |
+|   Logical        |  AND          | Both conditions must be true         |  age > 25 AND lastname = 'Torres'                   | Returns rows that match both conditions.                          |
+|                  |  OR           | At least one condition must be true  |  age < 20 OR age > 30                               | Returns rows where either condition is true.                      |
+|                  |  NOT          | Negates a condition                  |  NOT age = 25                                       | Returns rows where  age  is not 25.                               |
+|   Other Useful   |  BETWEEN      | Value within a range (inclusive)     |  age BETWEEN 20 AND 30                              | Returns rows where  age  is between 20 and 30.                    |
+|                  |  IN           | Matches any value in a list          |  age IN (18, 21, 25)                                | Returns rows where  age  equals any listed value.                 |
+|                  |  LIKE         | Pattern matching (text search)       |  name LIKE 'J%'                                     | Returns rows where  name  starts with “J”.                        |
+|                  |  IS NULL      | Value is empty / undefined           |  email IS NULL                                      | Returns rows where  email  has no value.                          |
+|                  |  IS NOT NULL  | Value is not empty                   |  email IS NOT NULL                                  | Returns rows where  email  has a value.                           |
+|                  |  EXISTS       | Checks if a subquery returns results |  EXISTS (SELECT * FROM orders WHERE user_id = 1)    | Returns true if the subquery finds matching rows.                 |
+|                  |  ALL          | Compares with all values in a set    |  age > ALL (SELECT age FROM users WHERE city='NY')  | True if  age  is greater than every value in the subquery.        |
+|                  |  ANY          | Compares with any value in a set     |  age > ANY (SELECT age FROM users WHERE city='NY')  | True if  age  is greater than at least one value in the subquery. |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	6. SELECT * FROM users ORDER BY age DESC; --> Retrieves all columns and rows from the table users, sorting the results by the age column in descending order (from highest to lowest).
+
+	7. SELECT * FROM users ORDER BY age ASC; --> Retrieves all columns and rows from the table users, sorting the results by the age column in ascending order (from lowest to highest).
+	   Tip: If you just write ORDER BY age;, MySQL will automatically use ascending order.
+
+	8. SELECT DISTINCT age FROM users; --> Retrieves only the unique values from the age column in the table users, removing any duplicates.
+
+--------------------------------------------------------------------------------------------- Important ----------------------------------------------------------------------------------------------
+
+	9. SELECT * FROM users WHERE age <= 30 ORDER BY age; --> You can use multiple clauses together, such as WHERE and ORDER BY, in the same command. This retrieves all columns and rows from the table users where the value in the age column is less than or equal to 30, and then sorts the results by age in ascending order.
+
+	10. SELECT * FROM users WHERE email LIKE '%gmail.com'; --> Retrieves all columns and rows from the table users where the value in the email column ends with “gmail.com”. The % symbol represents any sequence of characters before “gmail.com”.
+
+	How % Works in Different Positions:
+
+	|   Pattern    |   Meaning                 |   Example Matches                            |   Doesn’t Match                        |
+	| ------------ | ------------------------- | -------------------------------------------- | -------------------------------------- |
+	|  %text       | Ends with “text”          |  mytext,  123text, hello_text                |  textbook,  text123                    |
+	|  text%       | Starts with “text”        |  textbook,  text123, textman                 |  mytext                                |
+	|  %text%      | Contains “text” anywhere  |  mytextfile,  bigtextbook,  atextz           | (almost nothing unless missing “text”) |
+	|  %@%         | Contains “@” anywhere     |  jhon@gmail.com,  user@outlook.com           |  isai.gmail.com                        |
+	|  %gmail.com  | Ends with “gmail.com”     |  jhon@gmail.com,  user@gmail.com             |  gmail.company                         |
+	|  %gmail%     | Contains “gmail” anywhere |  jhon@gmail.com,  gmailUser, nogmailhere     | (none without “gmail”)                 |
+
+	11. SELECT * FROM users WHERE NOT email = 'jose@gmail.com' OR age = 40 LIMIT 2; --> This command retrieves all columns and rows from the table users where the email is not 'jose@gmail.com' or the user’s age is 40, and it limits the result to 2 rows (the first two that match the condition).
+
+
+IV. NUll command
+
+	12. SELECT * FROM users WHERE age IS NULL; --> Retrieves all rows from the table users where the age column has a NULL value, meaning those rows do not contain any age data.
+
+	13. SELECT , IFNULL(age, 0) AS age FROM users; --> Retrieves all columns from the table users and replaces any NULL values in the age column with 0 in the output. The IFNULL function checks if age is NULL; if it is, it returns 0, otherwise it returns the original age value.
+
+V. MIN, MAX and SUM command
+
+	14. SELECT MAX(age) FROM users; --> This command retrieves the highest value in the age column. MAX() on VARCHAR returns the last value in alphabetical order.
+
+	15. SELECT MIN(age) FROM users; --> Retrieves the smallest value in the age column (the youngest user).
+
+	16. SELECT SUM(age) FROM users; --> This command adds all the values in the age column and returns the total sum.This command add all the ages and show the total.
+
+VI. COUNT command
+
+	17. SELECT COUNT(age) FROM users; --> Counts how many rows have a non-NULL value in the age column.
+
+	18. SELECT COUNT(*) FROM users; --> Counts the total number of rows in the users table, including those with NULL values.
+
+VII. ALIAS and CONCAT command
+
+	19. SELECT name, init_date AS 'Fecha de Inicio de Programación' FROM users; --> Retrieves the name column and the init_date column from the table users, but displays init_date under the label “Fecha de Inicio de Programación” using the AS alias.
+
+	12. SELECT CONCAT(name, lastname) FROM users; --> Combines (concatenates) the values from the name and lastname columns into a single string and returns the result for each row.
+	Other example --> SELECT CONCAT('Nombre:', ' ', name, ' ', lastname) AS 'Nombre Completo' FROM users;
+
+VIII. GROUP BY  and HAVING command
+
+	21. SELECT age, COUNT(*) FROM users GROUP BY age; --> Groups all rows by the age column and returns each unique age along with the number of users who have that age.
+	GROUP BY is used in SQL to group rows that have the same value in one or more columns so you can apply aggregate functions (like COUNT, SUM, AVG, MAX, MIN) to each group.
+
+	22. SELECT age, COUNT(*) FROM users GROUP BY age HAVING COUNT(*) >= 2; --> Groups the rows by the age column, counts how many users belong to each age group, and then filters the results to show only the ages that have 2 or more users.
+
+IX. CASE command
+
+	SELECT name, lastname, age, 
+	CASE
+	WHEN age > 17 THEN 'Es mayor de edad'
+	WHEN age IS NULL THEN 'Edad no confirmada'
+	ELSE 'Es menor de edad'
+	END AS '¿Es mayor de edad?'
+	FROM users;
+
+	23. CASE command --> Allows you to create conditional logic inside a SQL query. It works like an IF / ELSE IF / ELSE structure and lets you return different values depending on the condition.
+
+X. Comments
+
+	|  Comments in MySQL     |  Example                     |
+	| ---------------------- | ---------------------------- |
+	| -- Single line comment | --This is a one line comment |
+	|                        |                              |
+	| /*                     | /*                           |
+	| Multi line comment     | This is an example           |
+	| in MySQL.              | of a Multi line              |
+	| */                     | comment.                     |
+	|                        | */                           |
