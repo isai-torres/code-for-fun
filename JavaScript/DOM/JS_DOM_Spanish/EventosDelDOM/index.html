@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="imagenes/slice.png">
+  <title>Mis Toppings</title>
+</head>
+<body>
+  <div id="contenedor">
+    <h1 id="titulo">🍕 <br> Toppings de Pizza</h1>
+
+    <!-- Panel que muestra información del evento activo -->
+    <div id="info-evento">Interactúa con los toppings...</div>
+
+    <ul id="lista-toppings">
+      <!-- click: se activa al hacer clic -->
+      <li onclick="mostrarClic()" class="topping fondo-marron" id="albahaca">
+        🌿 Albahaca <span class="etiqueta">click</span>
+      </li>
+
+      <!-- mouseover / mouseout: al entrar y salir el cursor -->
+      <li class="topping fondo-naranja" id="cebolla">
+        🧅 Cebolla <span class="etiqueta">mouseover / mouseout</span>
+      </li>
+
+      <!-- mousedown / mouseup: al presionar y soltar el botón del ratón -->
+      <li class="topping fondo-marron" id="champinones">
+        🍄 Champiñones <span class="etiqueta">mousedown / mouseup</span>
+      </li>
+
+      <!-- mousemove: al mover el cursor dentro del elemento -->
+      <li class="topping fondo-naranja" id="aceitunas">
+        🫒 Aceitunas <span class="etiqueta">mousemove</span>
+      </li>
+    </ul>
+
+    <!-- Sección de eventos de teclado -->
+    <div id="seccion-teclado">
+      <p>⌨️ Escribe algo para ver los eventos de teclado:</p>
+      <!-- keydown, keyup, keypress -->
+      <input type="text" id="campo-texto" placeholder="keydown · keyup · keypress...">
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
